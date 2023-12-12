@@ -1,0 +1,16 @@
+* {
+    background-color: grey;
+}
+
+#box {
+    color: magenta;
+    background-color: blue;
+}
+
+.heading {
+    color: red;
+}
+
+button {
+    color: green;
+}

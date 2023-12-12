@@ -1,3 +1,7 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
     background-color:aquamarine;
 }
@@ -9,4 +13,26 @@ h1 {
 button {
     color: #0000ff;
     background-color: #f5ef42;
+}
+
+#para {
+    color: magenta;
+}
+
+.mix {
+    color: green;
+}
+
+#right-allign {
+    color: purple;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: right;
+    text-decoration: green dotted line-through;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
 }
