@@ -1,0 +1,10 @@
+#bg {
+    height: 300px;
+    width: 500px;
+    color: aqua;
+    background-image: url("images/car.jpg");
+    background-size: cover;
+    position: fixed;
+    top: 100px;
+    right: 0;
+}

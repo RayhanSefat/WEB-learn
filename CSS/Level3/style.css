@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#box1 {
+    height: 100px;
+    width: 200px;
+    background-color: green;
+    font-size: 20px;
+}
+
+#box2 {
+    height: 50px;
+    width: 30%;
+    background-color: brown;
+    margin: 5%;
+    font-size: 0.5em;
+    width: 10em;
+    height: 5rem;
+}
+
+#position {
+    margin-top: 50px;
+    background-color: pink;
+    background-image: url("/images/bg.jpg");
+    background-size: cover;
+}
+
+.inner {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+#box-1 {
+    position: static;
+    background-color: blue;
+}
+
+#box-2 {
+    position: relative;
+    top: 200px;
+    left: 150px;
+    background-color: yellow;
+    z-index: 1;
+}
+
+#box-3 {
+    position: absolute;
+    top: 100px;
+    left: 550px;
+    background-image: url("images/box-3.jpg");
+    background-size: contain;
+}
+
+#box-4 {
+    position: fixed;
+    background-color: brown;
+    top: 100px;
+    left: 100px;
+}
+
+#box-5 {
+    position: sticky;
+    background-color: red;
+    top: 100px;
+    left: 150px;
+}
