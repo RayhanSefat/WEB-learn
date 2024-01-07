@@ -8,3 +8,14 @@
     align-items: center;
     color: #172815;
 }
+
+.paragraph {
+    background-color: blue;
+    color: blueviolet;
+    font-size: 30px;
+}
+
+.paragraph-upd1 {
+    background-color: black;
+    text-decoration: underline;
+}
