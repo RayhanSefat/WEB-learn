@@ -17,21 +17,23 @@ const changeDisplayCompChoice = (compChoice) => {
     compChoiceMsg.innerText = `Computer choosed ${compChoice}`;
 };
 
+const changeTextAndBackground = (msgElement, text, color) => {
+    msgElement.innerText = text;
+    msgElement.style.backgroundColor = color;
+};
+
 const drawGame = () => {
-    msg.innerText = "Game is drawn";
-    msg.style.backgroundColor = "#081b31";
+    changeTextAndBackground(msg, "Game is drawn", "#081b31");
 };
 
 const winGame = () => {
     userScore++;
-    msg.innerText = "You win";
-    msg.style.backgroundColor = "green";
+    changeTextAndBackground(msg, "You win", "green");
 };
 
 const loseGame = () => {
     compScore++;
-    msg.innerText = "You lose";
-    msg.style.backgroundColor = "red";
+    changeTextAndBackground(msg, "You lose", "red");
 };
 
 const getUserWin = (userChoice, compChoice) => {
@@ -49,7 +51,35 @@ const getUserWin = (userChoice, compChoice) => {
 const updateScore = () => {
     userScoreMsg.innerText = userScore;
     compScoreMsg.innerText = compScore;
-}
+};
+
+let matchIsOn = true;
+let thresholdScore = 10;
+
+const isMatchOn = () => {
+    return (userScore < thresholdScore && compScore < thresholdScore);
+};
+
+const showWinMessage = () => {
+    let message = "Coungratulations! You have won the match.";
+    changeTextAndBackground(msg, message, "green");
+};
+
+const showLoseMessage = () => {
+    let message = "Sorry! You have lost the match.";
+    changeTextAndBackground(msg, message, "red");
+};
+
+const endMatch = () => {
+    matchIsOn = false;
+
+    if(userScore == thresholdScore) {
+        showWinMessage();
+    }
+    else {
+        showLoseMessage();
+    }
+};
 
 const playGame = (userChoice) => {
     const compChoice = generateComputerChoice();
@@ -63,10 +93,16 @@ const playGame = (userChoice) => {
     }
 
     updateScore();
+    if(!isMatchOn()) {
+        endMatch();
+    }
 };
 
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
+        if(!matchIsOn) {
+            return;
+        }
         let userChoice = choice.getAttribute("id");
         playGame(userChoice);
     })
