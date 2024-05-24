@@ -23,7 +23,7 @@ const changeTextAndBackground = (msgElement, text, color) => {
 };
 
 const drawGame = () => {
-    changeTextAndBackground(msg, "Game is drawn", "#081b31");
+    changeTextAndBackground(msg, "Game is drawn", "#a4c2a5");
 };
 
 const winGame = () => {
@@ -101,6 +101,7 @@ const playGame = (userChoice) => {
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
         if(!matchIsOn) {
+            alert("The match has ended.\n" + msg.innerText);
             return;
         }
         let userChoice = choice.getAttribute("id");
