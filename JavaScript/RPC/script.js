@@ -61,7 +61,7 @@ const isMatchOn = () => {
 };
 
 const showWinMessage = () => {
-    let message = "Coungratulations! You have won the match.";
+    let message = "Congratulations! You have won the match.";
     changeTextAndBackground(msg, message, "green");
 };
 
@@ -73,7 +73,7 @@ const showLoseMessage = () => {
 const endMatch = () => {
     matchIsOn = false;
 
-    if(userScore == thresholdScore) {
+    if(userScore === thresholdScore) {
         showWinMessage();
     }
     else {
